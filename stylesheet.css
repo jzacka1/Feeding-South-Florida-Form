@@ -1,14 +1,24 @@
 body{
       font-family: 'Montserrat', sans-serif;
 }
+
+.container {
+  display: flex; /* or inline-flex */
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+
 smallBar{
       width:20px;
-      border:8px solid red';
+      border:8px solid red;
 
 }
-mediBar{
-      width:40px
+medBar{
+      width:40px;
+      border:8px solid pink;
 }
 largeBar{
-      width:80px
+      width:80px;
+      border:8px solid pink;
 }
