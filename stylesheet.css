@@ -1,3 +1,14 @@
 body{
       font-family: 'Montserrat', sans-serif;
 }
+smallBar{
+      width:20px;
+      border:8px solid red';
+
+}
+mediBar{
+      width:40px
+}
+largeBar{
+      width:80px
+}
