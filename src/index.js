@@ -7,14 +7,14 @@ let lowerThird = document.getElementById('lowerThird');
 
 let addButton=(word,css)=>{
       /* Create an button element */ 
-var word = document.createElement("button"); 
+var word1 = document.createElement("button"); 
               
 /* Set the type class */ 
-word.setAttribute("class", css);
+word1.setAttribute("class", css);
 
-word.setAttribute('value',word)
+word1.setAttribute('name',word)
 /* Append node to the body */ 
-lowerThird.appendChild(word); 
+lowerThird.appendChild(word1); 
 
 }
 
