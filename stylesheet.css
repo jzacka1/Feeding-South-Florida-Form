@@ -6,13 +6,12 @@ body{
   display: flex; /* or inline-flex */
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: center;
 }
 
 
 smallBar{
       width:20px;
-      border:8px solid pink;
+      border:8px solid red;
 
 }
 medBar{
