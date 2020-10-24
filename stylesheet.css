@@ -1,6 +1,14 @@
 body{
       font-family: 'Montserrat', sans-serif;
 }
+
+.container {
+  display: flex; /* or inline-flex */
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+
 smallBar{
       width:20px;
       border:8px solid red;
