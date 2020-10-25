@@ -3,40 +3,63 @@
       justify-content: center;
       align-items: center;
       flex-direction: column;
+      font-family: 'Montserrat', sans-serif !important;
+
 }
 
 
 body{
       font-family: 'Montserrat', sans-serif;
 }
+::placeholder {
+      color: #436026;
+      font-family: 'Montserrat', sans-serif;
+
+}
 input{
       border: 8px solid #f28c3c;
       border-radius: 2px;
       margin: 5px 10px 5px 10px !important;
+      width: 300px;
+      color: #436026;
+      text-align-last: center;
+      border-bottom-color: currentcolor;
 }
 #lowerThird{
-      flex-direction: row;
+      flex-direction: row-reverse;
       display: flex;}
 .container {
   display: flex; /* or inline-flex */
   flex-direction: row;
   flex-wrap: nowrap;
 }
-
-
-smallBar{
-      width:20px;
-      border:8px solid pink;
+#topDiv{
+      flex-direction: row;
+      display: flex;
+      margin: 30px;
 
 }
-medBar{
-      width:40px;
-      border:8px solid pink;
+#bottomDiv{
+      flex-direction: row;
+      display: flex;
 }
-largeBar{
-      width:80px;
-      border:8px solid pink;
+.clickInput{
+      color: #436026;
+      height: 100px;
+      width: 100px;
+      margin: 30px;
+
 }
+.smallBar{
+      width:100px;
+      border:8px solid #f28c3c;
+      border-radius: 10px;
+      color:white;
+      background-color: #f28c3c;
+      margin:5px;
+
+}
+
 
 
 

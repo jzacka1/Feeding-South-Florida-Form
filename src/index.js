@@ -136,24 +136,20 @@ let addPersonDiv = (ages,id, css) => {
     person.setAttribute("class", css);
     
         /* Set height of the person */
-        switch(ages) {
-            case ages < 10:
+        switch(personAge) {
+            case personAge < 10:
                 // person.style.height = "50px";
                 person.setAttribute("src", "assests/images/Grain-Child.png");
                 person.setAttribute('id', id)
                 people.appendChild(person);
-                // let fig = document.createElement("FIGCAPTION");
-                // let text = document.createTextNode("Child");
-                // fig.appendChild(text);
-                // person.appendChild(fig)
                 break;
-            case 10<ages && ages < 65:
+            case 10<personAge && personAge < 65:
                 // person.style.height = "70px";
                 person.setAttribute("src", "assests/images/Grain-Adult.png");
                 person.setAttribute('id', id)
                 people.appendChild(person);
                 break;
-            case ages < 65: 
+            case personAgew < 65: 
                 // person.style.height = "100px";
                 person.setAttribute("src", "assests/images/Grain-Senior.png");
                 person.setAttribute('id', id);
@@ -227,7 +223,7 @@ let NextSlide = (slideId) => {
             UpdateProgressBar("ProgressBar3.png",'progressbar'); 
             removeAllChildNodes(middleThird);
             addText("Adding a person:")
-            inputFill('PersonAge',null,'number','PersonAge');
+            inputFill('PersonAge',null,'number','personAge');
             addButton('Add a person','smallBar','addPerson()',true);
             addDiv("people");
             console.log("ShowPeople",form.people)
@@ -254,7 +250,29 @@ let NextSlide = (slideId) => {
         case 5: 
             UpdateProgressBar("ProgressBar5.png",'progressbar');
             removeAllChildNodes(middleThird);
-            // TODO step 5
+            addDiv('bigDiv')
+            addDiv('topDiv')
+            addDiv('bottomDiv')
+            inputFill('food','clickInput','text','serviceFood')
+            inputFill('Snap','clickInput','text','serviceSnap')
+            inputFill('Medicad','clickInput','text','serviceMed')
+            inputFill('other','clickInput','text','serviceOther')
+            inputFill('food','clickInput','checkbox','serviceFoodCheck')
+
+            serviceFood.setAttribute('readOnly','enable')
+            serviceSnap.setAttribute('readOnly','enable')
+            serviceMed.setAttribute('readOnly','enable')
+            serviceOther.setAttribute('readOnly','enable')
+
+            addText('Request Services:')
+            bigDiv.appendChild(topDiv)
+            bigDiv.appendChild(topDiv)
+            bigDiv.appendChild(bottomDiv)
+            topDiv.appendChild(serviceFood)
+            topDiv.appendChild(serviceSnap)
+            bottomDiv.appendChild(serviceMed)
+            bottomDiv.appendChild(serviceOther)
+            serviceFood.appendChild(serviceFoodCheck)
             removeAllChildNodes(lowerThird);
             nextBackButtons()
             break;
