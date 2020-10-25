@@ -12,6 +12,6 @@ let James Zacka => {I am Software Developer. I specialize in developing MVC appl
 let Janice Pickron => {Frontend Developer, Web App Security Consultant Team-oriented twenty years in computer analyst and programming.}
 -
 
-let Specal Thanks
+Specal Thanks
 -
-Damian Montero => {Thanks to his assistance we were able compensate for Angel's covid fatigue and get the most out of this event.}
+let Damian Montero => {Thanks to his assistance we were able compensate for Angel's covid fatigue and get the most out of this event.}
