@@ -258,7 +258,6 @@ let NextSlide = (slideId) => {
         case 2: 
             UpdateProgressBar("ProgressBar2.png",'progressbar');
             removeAllChildNodes(middleThird);
-<<<<<<< HEAD
             addDiv('language');
             addDiv('language1');
             addDiv('language2');
@@ -279,13 +278,7 @@ let NextSlide = (slideId) => {
         case 3: 
             UpdateProgressBar("ProgressBar3.png",'progressbar');
             removeAllChildNodes(middleThird);
-<<<<<<< HEAD
             addText('<h3>Contact Information:</h3>');
-=======
-
-            addHeader_3('Contacts', 'Contacts');
-
->>>>>>> b3276b54f237b05b892ca63953c58ff2a53019d7
             /* Generated DIV tags and appended INPUT controls inside DIV tags */
             let contacts = addDiv('contacts');
             contacts.append(
@@ -303,14 +296,8 @@ let NextSlide = (slideId) => {
         case 4:   // people
             UpdateProgressBar("ProgressBar4.png",'progressbar'); 
             removeAllChildNodes(middleThird);
-<<<<<<< HEAD
             addText("<h3>Adding a person:</h3>")
             inputFill('PersonAge',null,'number','personAge');
-=======
-            // addText("Adding a person:");
-            addHeader_3('Adding a Person', 'PersonAdd');
-            inputFill('PersonAge',null,'number','PersonAge');
->>>>>>> b3276b54f237b05b892ca63953c58ff2a53019d7
             addButton('Add a person','smallBar','addPerson()',true);
             addDiv("people");
             console.log("ShowPeople",form.people)
@@ -326,11 +313,7 @@ let NextSlide = (slideId) => {
             UpdateProgressBar("ProgressBar5.png",'progressbar');
 
             removeAllChildNodes(middleThird);
-<<<<<<< HEAD
             addText('<h3>Your Location:</h3>')
-=======
-            addHeader_3('Address', 'Address');
->>>>>>> b3276b54f237b05b892ca63953c58ff2a53019d7
             let address = addDiv('address');
             address.append(
                 inputFill('Your Adress Lane',null,'text')
@@ -354,7 +337,6 @@ let NextSlide = (slideId) => {
         case 6: 
             UpdateProgressBar("ProgressBar6.png",'progressbar');
             removeAllChildNodes(middleThird);
-<<<<<<< HEAD
             addText('<h3>Which services do you require?</h3>')
             addDiv('bigDiv')
             addDiv('topDiv')
@@ -380,18 +362,16 @@ let NextSlide = (slideId) => {
             bottomDiv.appendChild(serviceOther)
             serviceFood.appendChild(serviceFoodCheck)
         
-=======
-            // TODO step 5
+            // // TODO step 5
 
-            addHeader_3('Requesting Assistance For:', 'Assistance');
+            // addHeader_3('Requesting Assistance For:', 'Assistance');
 
-            // addChckBxs('Medicaid Application Assistance', 'SNAP', 'FOOD', 'Other');
-            addButton('Medicaid Application Assistance','smallBar',null,true);
-            addButton('SNAP','smallBar',null,true);
-            addButton('Food','smallBar',null,true);
-            addButton('Other','smallBar',null,true);
+            // // addChckBxs('Medicaid Application Assistance', 'SNAP', 'FOOD', 'Other');
+            // addButton('Medicaid Application Assistance','smallBar',null,true);
+            // addButton('SNAP','smallBar',null,true);
+            // addButton('Food','smallBar',null,true);
+            // addButton('Other','smallBar',null,true);
 
->>>>>>> b3276b54f237b05b892ca63953c58ff2a53019d7
             removeAllChildNodes(lowerThird);
             nextBackButtons()
             break;
@@ -399,11 +379,7 @@ let NextSlide = (slideId) => {
         case 7: 
             UpdateProgressBar("ProgressBar7.png",'progressbar');
             removeAllChildNodes(middleThird);
-<<<<<<< HEAD
             addText('<h3>Help us help you:</h3>')
-=======
-            addHeader_3('Referral Source', 'Referral');
->>>>>>> b3276b54f237b05b892ca63953c58ff2a53019d7
             inputFill('How did you hear about us?',null,'text');
             inputFill('Please ask as many questions as you need!',null,'text');
             removeAllChildNodes(lowerThird);
