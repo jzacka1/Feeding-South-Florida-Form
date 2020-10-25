@@ -95,17 +95,17 @@ let inputFill = (placeholder,css,type,id)=>{
 
 //Add name for all btns before adding labels.
 function addRadioBtns(name) {
-    let args = Array.from(arguments);
+    let pram = Array.from(arguments);
 
-    for(var i = 0; i < args.length; i++){
+    for(var i = 0; i < pram.length; i++){
         let radiobtn = document.createElement('input');
         radiobtn.type = 'radio';
         radiobtn.name = name;
-        radiobtn.id = 'Your' + args[i] + 'Radio';
-        radiobtn.value = args[i];
+        radiobtn.id = 'Your' + pram[i] + 'Radio';
+        radiobtn.value = pram[i];
 
         middleThird.appendChild(radiobtn);
-        middleThird.appendChild(addText(args[i]));
+        middleThird.appendChild(addText(pram[i]));
     }
 }
 
@@ -254,7 +254,16 @@ let NextSlide = (slideId) => {
         case 2: 
             UpdateProgressBar("ProgressBar2.png",'progressbar');
             removeAllChildNodes(middleThird);
+            addDiv('language');
+            addDiv('language1');
+            addDiv('language2');
+            language.appendChild(language1);
+            language.appendChild(language2);
             addRadioBtns('English', 'Spanish');
+            language1.appendChild(document.querySelector("#\\32 ") )
+            language1.appendChild(YourEnglishRadio)
+            language2.appendChild(document.querySelector("#\\33 "))
+            language2.appendChild(YourSpanishRadio)
             inputFill('First Name',null,'text');
             inputFill('Last Name',null,'text');
             removeAllChildNodes(lowerThird);
@@ -264,7 +273,7 @@ let NextSlide = (slideId) => {
         case 3: 
             UpdateProgressBar("ProgressBar3.png",'progressbar');
             removeAllChildNodes(middleThird);
-
+            addText('<h3>Contact Information:</h3>');
             /* Generated DIV tags and appended INPUT controls inside DIV tags */
             let contacts = addDiv('contacts');
             contacts.append(
@@ -282,7 +291,7 @@ let NextSlide = (slideId) => {
         case 4:   // people
             UpdateProgressBar("ProgressBar4.png",'progressbar'); 
             removeAllChildNodes(middleThird);
-            addText("Adding a person:")
+            addText("<h3>Adding a person:</h3>")
             inputFill('PersonAge',null,'number','personAge');
             addButton('Add a person','smallBar','addPerson()',true);
             addDiv("people");
@@ -298,6 +307,7 @@ let NextSlide = (slideId) => {
         case 5:       
             UpdateProgressBar("ProgressBar5.png",'progressbar');
             removeAllChildNodes(middleThird);
+            addText('<h3>Your Location:</h3>')
             let address = addDiv('address');
             address.append(
                 inputFill('Your Adress Lane',null,'text')
@@ -321,6 +331,7 @@ let NextSlide = (slideId) => {
         case 6: 
             UpdateProgressBar("ProgressBar6.png",'progressbar');
             removeAllChildNodes(middleThird);
+            addText('<h3>Which services do you require?</h3>')
             addDiv('bigDiv')
             addDiv('topDiv')
             addDiv('bottomDiv')
@@ -335,7 +346,7 @@ let NextSlide = (slideId) => {
             serviceMed.setAttribute('readOnly','enable')
             serviceOther.setAttribute('readOnly','enable')
 
-            addText('Request Services:')
+            // addText('Request Services:')
             bigDiv.appendChild(topDiv)
             bigDiv.appendChild(topDiv)
             bigDiv.appendChild(bottomDiv)
@@ -352,6 +363,7 @@ let NextSlide = (slideId) => {
         case 7: 
             UpdateProgressBar("ProgressBar7.png",'progressbar');
             removeAllChildNodes(middleThird);
+            addText('<h3>Help us help you:</h3>')
             inputFill('How did you hear about us?',null,'text');
             inputFill('Please ask as many questions as you need!',null,'text');
             removeAllChildNodes(lowerThird);

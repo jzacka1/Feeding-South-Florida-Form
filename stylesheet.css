@@ -37,6 +37,15 @@ input{
       flex-direction: row;
       display: flex;
 }
+#language{
+      flex-direction: row;
+}
+#YourEnglishRadio{
+      width: 100px;
+}
+#YourSpanishRadio{
+      width: 100px;
+}
 .container {
   display: flex; /* or inline-flex */
   flex-direction: row;
