@@ -38,6 +38,10 @@ let addButton = (word, css, onclick,TomiddleThird) => {
 
     /* Set the type class */
     word1.setAttribute("class", css);
+
+    /* Add name of btn as unique value for attribute to be referenced in stylesheet */
+    word1.setAttribute("btnName", word);
+
     if (onclick) {
         word1.setAttribute("onclick",onclick);
     }
@@ -258,6 +262,7 @@ let NextSlide = (slideId) => {
         case 2: 
             UpdateProgressBar("ProgressBar2.png",'progressbar');
             removeAllChildNodes(middleThird);
+            addHeader_3('Language', 'Language');
             addRadioBtns('English', 'Spanish');
             inputFill('First Name',null,'text');
             inputFill('Last Name',null,'text');
@@ -268,6 +273,8 @@ let NextSlide = (slideId) => {
         case 3: 
             UpdateProgressBar("ProgressBar3.png",'progressbar');
             removeAllChildNodes(middleThird);
+
+            addHeader_3('Contacts', 'Contacts');
 
             /* Generated DIV tags and appended INPUT controls inside DIV tags */
             let contacts = addDiv('contacts');
@@ -286,7 +293,8 @@ let NextSlide = (slideId) => {
         case 4:   // people
             UpdateProgressBar("ProgressBar4.png",'progressbar'); 
             removeAllChildNodes(middleThird);
-            addText("Adding a person:")
+            // addText("Adding a person:");
+            addHeader_3('Adding a Person', 'PersonAdd');
             inputFill('PersonAge',null,'number','PersonAge');
             addButton('Add a person','smallBar','addPerson()',true);
             addDiv("people");
@@ -301,7 +309,9 @@ let NextSlide = (slideId) => {
 
         case 5:       
             UpdateProgressBar("ProgressBar5.png",'progressbar');
+
             removeAllChildNodes(middleThird);
+            addHeader_3('Address', 'Address');
             let address = addDiv('address');
             address.append(
                 inputFill('Your Adress Lane',null,'text')
@@ -327,7 +337,13 @@ let NextSlide = (slideId) => {
             removeAllChildNodes(middleThird);
             // TODO step 5
 
-            addChckBxs('Medicaid Application Assistance', 'SNAP', 'FOOD', 'Other');
+            addHeader_3('Requesting Assistance For:', 'Assistance');
+
+            // addChckBxs('Medicaid Application Assistance', 'SNAP', 'FOOD', 'Other');
+            addButton('Medicaid Application Assistance','smallBar',null,true);
+            addButton('SNAP','smallBar',null,true);
+            addButton('Food','smallBar',null,true);
+            addButton('Other','smallBar',null,true);
 
             removeAllChildNodes(lowerThird);
             nextBackButtons()
@@ -336,6 +352,7 @@ let NextSlide = (slideId) => {
         case 7: 
             UpdateProgressBar("ProgressBar7.png",'progressbar');
             removeAllChildNodes(middleThird);
+            addHeader_3('Referral Source', 'Referral');
             inputFill('How did you hear about us?',null,'text');
             inputFill('Please ask as many questions as you need!',null,'text');
             removeAllChildNodes(lowerThird);
