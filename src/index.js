@@ -361,16 +361,6 @@ let NextSlide = (slideId) => {
             bottomDiv.appendChild(serviceMed)
             bottomDiv.appendChild(serviceOther)
             serviceFood.appendChild(serviceFoodCheck)
-        
-            // // TODO step 5
-
-            // addHeader_3('Requesting Assistance For:', 'Assistance');
-
-            // // addChckBxs('Medicaid Application Assistance', 'SNAP', 'FOOD', 'Other');
-            // addButton('Medicaid Application Assistance','smallBar',null,true);
-            // addButton('SNAP','smallBar',null,true);
-            // addButton('Food','smallBar',null,true);
-            // addButton('Other','smallBar',null,true);
 
             removeAllChildNodes(lowerThird);
             nextBackButtons()
