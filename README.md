@@ -3,14 +3,14 @@ This is a redesign of the current COVID-19 EMERGENCY SERVICES FORM page
 
 
 
-let Angel Baro => {Web Developer - Javascript, HTML & CSS, MongoDB, React, Express}
--
+let **Angel Baro** => *{Web Developer - Javascript, HTML & CSS, MongoDB, React, Express}*
 
-let James Zacka => {I am Software Developer. I specialize in developing MVC applications in the .Net framework.}
--
 
-let Janice Pickron => {Frontend Developer, Web App Security Consultant Team-oriented twenty years in computer analyst and programming.}
--
+let **James Zacka** => *{I am Software Developer. I specialize in developing MVC applications in the .Net framework.}*
+
+
+let **Janice Pickron** => *{Frontend Developer, Web App Security Consultant Team-oriented twenty years in computer analyst and programming.}*
+
 
 Specal Thanks
 -
