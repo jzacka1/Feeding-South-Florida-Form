@@ -5,7 +5,22 @@ let lowerThird = document.getElementById('lowerThird');
 let breadcrumbs = document.getElementById('breadcrumbs');
 
 let buttonid = 0;
-let form = [];
+let form1 = {
+    firstName:'',
+    lastName:'',
+    email:'',
+    phone:'',
+    altContact:'',
+    people:[],
+    addy:'',
+    addy2:'',
+    state:'',
+    city:'',
+    zip:'',
+    service:'',
+    referal:'',
+    question:''
+};
 
 let addDiv = (divName) => {
     let Div = document.createElement("div");
@@ -58,11 +73,11 @@ let addButton = (word, css, onclick, TomiddleThird) => {
 }
 
 
-let inputFill = (placeholder, css, type, id) => {
+let inputFill = (placeholder, css, type, id,key) => {
     /* Create an input element */
     let placeholder1 = document.createElement("INPUT");
-    let inputButtonID = placeholder.replaceAll(" ", "");
-    //console.log(inputButtonID);
+    let idthingy = placeholder.replaceAll(" ", "");
+    //console.log(idthingy);
     /* Set the type attribute */
     placeholder1.setAttribute("type", type);
     //placeholder1.setAttribute("required", ""); 
@@ -75,11 +90,11 @@ let inputFill = (placeholder, css, type, id) => {
     if (id) {
         placeholder1.setAttribute('id', id);
     } else {
-        placeholder1.setAttribute('id', inputButtonID);
+        placeholder1.setAttribute('id', idthingy);
     }
     console.clear();
-    console.log("inputButtonID", inputButtonID);
-    let value1 = GetFormValue(inputButtonID);
+    console.log("idthingy", idthingy);
+    let value1 = GetFormValue(idthingy);
     console.log("value", value1);
 
     if (value1) {
@@ -89,9 +104,9 @@ let inputFill = (placeholder, css, type, id) => {
     /* Append node to the body */
     middleThird.appendChild(placeholder1);
 
-    if (inputButtonID != "PersonAge") // add a listener EXCEP for the Age which has it's own
+    if (idthingy != "PersonAge") // add a listener EXCEP for the Age which has it's own
     {
-        placeholder1.setAttribute("onkeyup", `saveChangeof('${inputButtonID}')`);
+        placeholder1.setAttribute("onkeyup", `saveChangeof('${idthingy}')`);
     }
 
     return placeholder1;
@@ -113,42 +128,29 @@ function addRadioBtns(name) {
     }
 }
 
-function addChckBxs(name) {
-    let args = Array.from(arguments);
 
-    for (var i = 0; i < args.length; i++) {
-        let checkbox = document.createElement('input');
-        checkbox.type = 'checkbox';
-        checkbox.name = name;
-        checkbox.id = 'Your' + args[i] + 'Checkbox';
-        checkbox.value = args[i];
 
-        middleThird.appendChild(checkbox);
-        middleThird.appendChild(addText(args[i]));
-    }
-}
-
-let saveChangeof = (labelID) => {
-    let InputValue = document.getElementById(labelID).value;
-    AddToForm(labelID, InputValue);
+let saveChangeof = (key) => {
+    let InputValue = document.getElementById(key).value;
+    AddToForm(key, InputValue);
 }
 
 
-let AddToForm = (labelID, InputValue) => {
-    console.log("labelID", labelID);
-    console.log("value of", InputValue);
-    let found = false;
-    form.map(x => {
-        if (x.labelID == labelID) {
-            x.value = InputValue;
-            found = true;
-        }
-    })
+let AddToForm = (doggy, InputValue) => {
 
-    if (!found) {
-        let newInput = { labelID: labelID, value: InputValue };
-        form.push(newInput);
-    }
+    form1.doggy = InputValue
+    // let found = false;
+    // Object.keys(form).map(x => {
+    //     if (x.key == key) {
+    //         x.value = InputValue;
+    //         found = true;
+    //     }
+    // })
+
+    // if (!found) {
+    //     let newInput = { key: key, value: InputValue };
+    //     // form.push(newInput);
+    // }
 }
 
 
@@ -228,11 +230,11 @@ let addPerson = () => {
 
 /* END People */
 
-let GetFormValue = (labelID) => {
+let GetFormValue = (key) => {
     let value = null
-    form.map(x => {
-        //console.log("x.labelID",x.labelID)
-        if (x.labelID == labelID) {
+    Object.keys(form1).map(x => {
+        //console.log("x.key",x.key)
+        if (x.key == key) {
             value = x.value
         }
     })
@@ -313,7 +315,7 @@ let NextSlide = (slideId) => {
             inputFill('PersonAge', null, 'number', 'personAge');
             addButton('Add a person', 'smallBar', 'addPerson()', true);
             addDiv("people");
-            console.log("ShowPeople", form.people)
+            console.log("ShowPeople", form1.people)
             let currentPeople = GetFormValue("People");
             if (currentPeople) {
                 ShowPeople(currentPeople);
@@ -413,5 +415,4 @@ let SendForm = () => {
     removeAllChildNodes(middleThird);
     removeAllChildNodes(lowerThird);
     addText("Your Form has been succesfully submited.<BR> Thank you.")
-    alert(`${form}`)
 }
