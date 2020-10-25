@@ -127,51 +127,61 @@ let UpdateProgressBar = (imgsrc,css) => {
 let NumOfPeople = 0;
 let PeopleArr = [];
  
-let addPersonDiv = (age,id, css) => {
+let addPersonDiv = (ages,id, css) => {
     let people = document.getElementById('people');
     /* Create an button element */
     let person = document.createElement("img");
 
     /* Set the type class */
     person.setAttribute("class", css);
-
     
         /* Set height of the person */
-        switch(true) {
-            case age < 10:
-                //person.style.height = "50px";
+        switch(ages) {
+            case ages < 10:
+                // person.style.height = "50px";
                 person.setAttribute("src", "assests/images/Grain-Child.png");
+                person.setAttribute('id', id)
+                people.appendChild(person);
+                // let fig = document.createElement("FIGCAPTION");
+                // let text = document.createTextNode("Child");
+                // fig.appendChild(text);
+                // person.appendChild(fig)
                 break;
-            case age < 65:
-                //person.style.height = "70px";
+            case 10<ages && ages < 65:
+                // person.style.height = "70px";
                 person.setAttribute("src", "assests/images/Grain-Adult.png");
+                person.setAttribute('id', id)
+                people.appendChild(person);
                 break;
-            default: 
-                //person.style.height = "100px";
+            case ages < 65: 
+                // person.style.height = "100px";
                 person.setAttribute("src", "assests/images/Grain-Senior.png");
+                person.setAttribute('id', id);
+                people.appendChild(person);
                 break;
         }
-    person.setAttribute('id', id)
-    /* Append node to the body */
-    people.appendChild(person);
+
 }
 //test for the adding a person
 
 let ShowPeople = (PeopleArr) => {
     PeopleArr.map(x=> {
         addPersonDiv(x.age,x.PersonID,"person");
+
     });
 }
 
 
 
 let addPerson = () => {
-    let PersonAge = document.getElementById("PersonAge").value;
+    let personAge = document.getElementById("PersonAge").value;
     NumOfPeople++;
-    addPersonDiv(PersonAge.value,NumOfPeople,"person");
-    let newPerson = {PersonID: NumOfPeople,age:PersonAge};
+    let newPerson = {PersonID: NumOfPeople,age:personAge};
     PeopleArr.push(newPerson);
-    AddToForm("People",PeopleArr);
+    AddToForm("People",PeopleArr);    
+    addPersonDiv(personAge,NumOfPeople,"person");
+
+
 }
 
 /* END People */

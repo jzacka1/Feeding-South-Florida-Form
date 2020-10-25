@@ -9,6 +9,11 @@
 body{
       font-family: 'Montserrat', sans-serif;
 }
+input{
+      border: 8px solid #f28c3c;
+      border-radius: 2px;
+      margin: 5px 10px 5px 10px !important;
+}
 #lowerThird{
       flex-direction: row;
       display: flex;}
@@ -44,6 +49,8 @@ largeBar{
   display: flex;
   justify-content: center;
   align-items: baseline;
+  flex-direction: row;
+  padding: 20px;
 }
 
 
