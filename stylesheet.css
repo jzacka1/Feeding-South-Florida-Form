@@ -3,40 +3,85 @@
       justify-content: center;
       align-items: center;
       flex-direction: column;
+      font-family: 'Montserrat', sans-serif !important;
+
 }
 
 
 body{
       font-family: 'Montserrat', sans-serif;
+      background-color: rgb(248, 248, 248);
+
 }
+::placeholder {
+      color: #436026;
+      font-family: 'Montserrat', sans-serif;
+      text-shadow: 0px 0px 7px rgba(255,255,255,0.13), 0px 0px 7px rgba(255,255,255,0.25), 0px 0px 7px rgba(255,255,255,0.35), 0px 0px 7px rgba(255,255,255,0.5), 0px 0px 7px rgba(255,255,255,0.61), 0px 0px 7px rgba(255,255,255,0.61);}
 input{
       border: 8px solid #f28c3c;
       border-radius: 2px;
       margin: 5px 10px 5px 10px !important;
+      width: 300px;
+      color: #436026;
+      text-align-last: center;
+      border-bottom-color: currentcolor;
+}
+#Pleaseaskasmanyquestionsasyouneed\!{
+      height: 150px;
+      width: 380px;
+}
+#middleThird{
+      height: 300px;
+      display: flex;
+      margin: 40px;
 }
 #lowerThird{
       flex-direction: row;
-      display: flex;}
+      display: flex;
+}
+#language{
+      flex-direction: row;
+}
+#YourEnglishRadio{
+      width: 100px;
+}
+#YourSpanishRadio{
+      width: 100px;
+}
 .container {
   display: flex; /* or inline-flex */
   flex-direction: row;
   flex-wrap: nowrap;
 }
-
-
-smallBar{
-      width:20px;
-      border:8px solid pink;
+#topDiv{
+      flex-direction: row;
+      display: flex;
+      margin: 30px;
 
 }
-medBar{
-      width:40px;
-      border:8px solid pink;
+#bottomDiv{
+      flex-direction: row;
+      display: flex;
 }
-largeBar{
-      width:80px;
-      border:8px solid pink;
+.clickInput{
+      color: #436026;
+      height: 100px;
+      width: 200px;
+      margin: 30px;
+      border-bottom-color:  #f28c3c;
+
 }
+/* .smallBar{
+      width:100px;
+      border:8px solid #f28c3c;
+      border-radius: 10px;
+      color:white;
+      background-color: #f28c3c;
+      margin:5px;
+      flex-direction: row-reverse;
+      
+} */
+
 
 
 
@@ -68,77 +113,17 @@ largeBar{
 }
 
 #CovidFrmHd {
+  width: 130vw;
   padding: 50px;
   border: 5px solid #ea861e;
-  background: rgba(234, 134, 30, 0.5)
+  background: rgba(234, 134, 30, 0.5);
+  font-weight: bold;
+  color: antiquewhite;
+  text-shadow: 0px 0px 7px rgba(0,0,0,0.24), 0px 0px 7px rgba(0,0,0,0.24), 0px 0px 7px rgba(0,0,0,0.36), 0px 0px 7px rgba(0,0,0,0.5), 0px 0px 7px rgba(0,0,0,0.5);  
 }
 
-#middleThird, #lowerThird{
-  margin-left: 25%;
-  margin-right: 25%;
-}
 
-button[btnName="Continue"]{
-  width:250px;
-  height:60px;
-  background-image: url('assests/images/Continue Btn.png');
-  background-size: 100%;
-  background-repeat: no-repeat;
-  border: none;
-  color:transparent;
-  margin: 20px;
-}
 
-button[btnName="Next"]{
-  width:150px;
-  height:50px;
-  background-image: url('assests/images/Next Btn.png');
-  background-size: 100%;
-  background-repeat: no-repeat;
-  border: none;
-  color:transparent;
-  margin: 20px;
-}
-
-button[btnName="Back"]{
-  width:150px;
-  height:50px;
-  background-image: url('assests/images/Back Btn.png');
-  background-size: 100%;
-  background-repeat: no-repeat;
-  border: none;
-  color:transparent;
-  margin: 20px;
-}
-
-button[btnName="Send Form"]{
-  width:150px;
-  height:50px;
-  background-image: url('assests/images/Finish Btn.png');
-  background-size: 100%;
-  background-repeat: no-repeat;
-  border: none;
-  color:transparent;
-  margin: 20px;
-}
-
-button[btnName="Medicaid Application Assistance"], 
-button[btnName="SNAP"],
-button[btnName="Food"],
-button[btnName="Other"]{
-  border: 5px solid #ea861e;
-  background-color: transparent;
-  color:black;
-}
-
-button[btnName="Medicaid Application Assistance"]:focus, 
-button[btnName="SNAP"]:focus,
-button[btnName="Food"]:focus,
-button[btnName="Other"]:focus{
-  border: 5px solid #cd5d98;
-  background-color: #ea861e;
-  color:white;
-}
 
 /* Style the list */
   .breadcrumb {
@@ -176,3 +161,68 @@ button[btnName="Other"]:focus{
     text-decoration: underline;
   }
 /* bread crumb */
+
+/* new button changes */
+
+
+button[btnName="Continue"]{
+      width:250px;
+      height:60px;
+      background-image: url('assests/images/Continue Btn.png');
+      background-size: 100%;
+      background-repeat: no-repeat;
+      border: none;
+      color:transparent;
+      margin: 20px;
+    }
+    
+    button[btnName="Next"]{
+      width:150px;
+      height:50px;
+      background-image: url('assests/images/Next Btn.png');
+      background-size: 100%;
+      background-repeat: no-repeat;
+      border: none;
+      color:transparent;
+      margin: 20px;
+    }
+    
+    button[btnName="Back"]{
+      width:150px;
+      height:50px;
+      background-image: url('assests/images/Back Btn.png');
+      background-size: 100%;
+      background-repeat: no-repeat;
+      border: none;
+      color:transparent;
+      margin: 20px;
+    }
+    
+    button[btnName="Send Form"]{
+      width:150px;
+      height:50px;
+      background-image: url('assests/images/Finish Btn.png');
+      background-size: 100%;
+      background-repeat: no-repeat;
+      border: none;
+      color:transparent;
+      margin: 20px;
+    }
+    
+    button[btnName="Medicaid Application Assistance"], 
+    button[btnName="SNAP"],
+    button[btnName="Food"],
+    button[btnName="Other"]{
+      border: 5px solid #ea861e;
+      background-color: transparent;
+      color:black;
+    }
+    
+    button[btnName="Medicaid Application Assistance"]:focus, 
+    button[btnName="SNAP"]:focus,
+    button[btnName="Food"]:focus,
+    button[btnName="Other"]:focus{
+      border: 5px solid #cd5d98;
+      background-color: #ea861e;
+      color:white;
+    }
