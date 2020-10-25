@@ -101,8 +101,11 @@ input{
 
 /* bread crumbs */
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> b3276b54f237b05b892ca63953c58ff2a53019d7
 .progressbar {
   height:100px;
   margin-left: 25%;
@@ -122,6 +125,68 @@ input{
 }
 
 
+
+button[btnName="Continue"]{
+  width:250px;
+  height:60px;
+  background-image: url('assests/images/Continue Btn.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  border: none;
+  color:transparent;
+  margin: 20px;
+}
+
+button[btnName="Next"]{
+  width:150px;
+  height:50px;
+  background-image: url('assests/images/Next Btn.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  border: none;
+  color:transparent;
+  margin: 20px;
+}
+
+button[btnName="Back"]{
+  width:150px;
+  height:50px;
+  background-image: url('assests/images/Back Btn.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  border: none;
+  color:transparent;
+  margin: 20px;
+}
+
+button[btnName="Send Form"]{
+  width:150px;
+  height:50px;
+  background-image: url('assests/images/Finish Btn.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  border: none;
+  color:transparent;
+  margin: 20px;
+}
+
+button[btnName="Medicaid Application Assistance"], 
+button[btnName="SNAP"],
+button[btnName="Food"],
+button[btnName="Other"]{
+  border: 5px solid #ea861e;
+  background-color: transparent;
+  color:black;
+}
+
+button[btnName="Medicaid Application Assistance"]:focus, 
+button[btnName="SNAP"]:focus,
+button[btnName="Food"]:focus,
+button[btnName="Other"]:focus{
+  border: 5px solid #cd5d98;
+  background-color: #ea861e;
+  color:white;
+}
 
 /* Style the list */
   .breadcrumb {
