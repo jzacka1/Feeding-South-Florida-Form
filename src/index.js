@@ -6,20 +6,6 @@ let breadcrumbs = document.getElementById('breadcrumbs');
 
 let buttonid = 0;
 let form1 = {
-    firstName:'',
-    lastName:'',
-    email:'',
-    phone:'',
-    altContact:'',
-    people:[],
-    addy:'',
-    addy2:'',
-    state:'',
-    city:'',
-    zip:'',
-    service:'',
-    referal:'',
-    question:''
 };
 
 let addDiv = (divName) => {
@@ -136,21 +122,9 @@ let saveChangeof = (key) => {
 }
 
 
-let AddToForm = (doggy, InputValue) => {
-
-    form1.doggy = InputValue
-    // let found = false;
-    // Object.keys(form).map(x => {
-    //     if (x.key == key) {
-    //         x.value = InputValue;
-    //         found = true;
-    //     }
-    // })
-
-    // if (!found) {
-    //     let newInput = { key: key, value: InputValue };
-    //     // form.push(newInput);
-    // }
+let AddToForm = (key, InputValue) => {
+  
+    form1[key]=(`${InputValue}`);
 }
 
 
