@@ -57,6 +57,7 @@ input{
       color:white;
       background-color: #f28c3c;
       margin:5px;
+      flex-direction: row-reverse;
 
 }
 
@@ -82,10 +83,7 @@ input{
 
 /* bread crumbs */
 
-#logo {
-  margin-left: 38%;
-  margin-right:38%;
-}
+
 
 .progressbar {
   height:100px;
@@ -101,10 +99,7 @@ input{
   background: rgba(234, 134, 30, 0.5)
 }
 
-#middleThird, #lowerThird{
-  margin-left: 25%;
-  margin-right: 25%;
-}
+
 
 /* Style the list */
   .breadcrumb {

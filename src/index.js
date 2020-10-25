@@ -355,7 +355,6 @@ let NextSlide = (slideId) => {
             inputFill('How did you hear about us?',null,'text');
             inputFill('Please ask as many questions as you need!',null,'text');
             removeAllChildNodes(lowerThird);
-            addButton('Back','smallBar',`NextSlide(${slideId-1})`);
             addButton('Send Form','smallBar',`SendForm()`);
         break;
 
