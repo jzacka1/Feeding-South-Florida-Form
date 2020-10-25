@@ -36,11 +36,34 @@ largeBar{
   align-items: baseline;
 }
 
+#contacts, #address{
+  display: inline-grid;
+}
 
 /* bread crumbs */
 
+#logo {
+  margin-left: 38%;
+  margin-right:38%;
+}
+
 .progressbar {
   height:100px;
+  margin-left: 25%;
+  margin-right:25%;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+#CovidFrmHd {
+  padding: 50px;
+  border: 5px solid #ea861e;
+  background: rgba(234, 134, 30, 0.5)
+}
+
+#middleThird, #lowerThird{
+  margin-left: 25%;
+  margin-right: 25%;
 }
 
 /* Style the list */

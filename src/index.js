@@ -11,6 +11,16 @@ let addDiv = (divName) => {
     let Div = document.createElement("div");
     Div.setAttribute('id', divName);
     middleThird.appendChild(Div);
+
+    return Div;
+}
+
+let addHeader_3 = (value, header) => {
+    let h3 = document.createElement("h3");
+    h3.setAttribute('id', header);
+    h3.innerHTML = value;
+    middleThird.appendChild(h3);
+    return h3;
 }
 
 let addText = (text) => {
@@ -19,6 +29,7 @@ let addText = (text) => {
     textSpan.setAttribute('id', buttonid)
     middleThird.appendChild(textSpan);
     document.getElementById(buttonid).innerHTML=text;
+    return textSpan;
 }
 
 let addButton = (word, css, onclick,TomiddleThird) => {
@@ -79,7 +90,38 @@ let inputFill = (placeholder,css,type,id)=>{
         placeholder1.setAttribute("onkeyup",`saveChangeof('${inputButtonID}')`);
     }
 
+    return placeholder1;
+}
 
+//Add name for all btns before adding labels.
+function addRadioBtns(name) {
+    let args = Array.from(arguments);
+
+    for(var i = 0; i < args.length; i++){
+        let radiobtn = document.createElement('input');
+        radiobtn.type = 'radio';
+        radiobtn.name = name;
+        radiobtn.id = 'Your' + args[i] + 'Radio';
+        radiobtn.value = args[i];
+
+        middleThird.appendChild(radiobtn);
+        middleThird.appendChild(addText(args[i]));
+    }
+}
+
+function addChckBxs(name) {
+    let args = Array.from(arguments);
+
+    for(var i = 0; i < args.length; i++){
+        let checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.name = name;
+        checkbox.id = 'Your' + args[i] + 'Checkbox';
+        checkbox.value = args[i];
+
+        middleThird.appendChild(checkbox);
+        middleThird.appendChild(addText(args[i]));
+    }
 }
 
 let saveChangeof = (labelID) => {
@@ -191,30 +233,48 @@ let GetFormValue =(labelID) => {
 // Next Slides
 let NextSlide = (slideId) => {
     let nextBackButtons = () => {
-        addButton('Next','smallBar',`NextSlide(${slideId+1})`)
-        addButton('Back','smallBar',`NextSlide(${slideId-1})`)
+        addButton('Back','smallBar',`NextSlide(${slideId-1})`);
+        addButton('Next','smallBar',`NextSlide(${slideId+1})`);
       }
     switch(slideId) {
+        /* Added extra case to generate layout for first page */
         case 1: 
             UpdateProgressBar("ProgressBar1.png",'progressbar');
             removeAllChildNodes(middleThird);
-            inputFill('First Name',null,'text');
-            inputFill('Last Name',null,'text');
+            addHeader_3('COVID-19 EMERGENCY SERVICES FORM', 'CovidFrmHd');
             removeAllChildNodes(lowerThird);
-            addButton('Next','smallBar',`NextSlide(${slideId+1})`)
+            addButton('Continue','smallBar',`NextSlide(${slideId+1})`)
             break;
-
         case 2: 
             UpdateProgressBar("ProgressBar2.png",'progressbar');
             removeAllChildNodes(middleThird);
-            inputFill('Your Email Adress',null,'email');
-            inputFill('Your Primary Phone  Number',null,'text');
-            inputFill('Any Other Form of Contact',null,'text');
+            addRadioBtns('English', 'Spanish');
+            inputFill('First Name',null,'text');
+            inputFill('Last Name',null,'text');
+            removeAllChildNodes(lowerThird);
+            nextBackButtons();
+            break;
+
+        case 3: 
+            UpdateProgressBar("ProgressBar3.png",'progressbar');
+            removeAllChildNodes(middleThird);
+
+            /* Generated DIV tags and appended INPUT controls inside DIV tags */
+            let contacts = addDiv('contacts');
+            contacts.append(
+                inputFill('Your Email Adress',null,'email')
+            );
+            contacts.append(
+                inputFill('Your Primary Phone  Number',null,'text')
+            );
+            contacts.append(
+                inputFill('Any Other Form of Contact',null,'text')
+            );
             removeAllChildNodes(lowerThird);
             nextBackButtons()
             break;
-        case 3:   // people
-            UpdateProgressBar("ProgressBar3.png",'progressbar'); 
+        case 4:   // people
+            UpdateProgressBar("ProgressBar4.png",'progressbar'); 
             removeAllChildNodes(middleThird);
             addText("Adding a person:")
             inputFill('PersonAge',null,'number','PersonAge');
@@ -229,22 +289,25 @@ let NextSlide = (slideId) => {
             nextBackButtons()
             break;
 
-        case 4:       
-            UpdateProgressBar("ProgressBar4.png",'progressbar');
-            removeAllChildNodes(middleThird);
-            inputFill('Your Adress Lane',null,'text');
-            inputFill('Your Adress Lane 2',null,'text');
-            inputFill('State',null,'text');
-            inputFill('City',null,'text');
-            inputFill('Zip',null,'text');
-            removeAllChildNodes(lowerThird);
-            nextBackButtons()
-            break;
-
-        case 5: 
+        case 5:       
             UpdateProgressBar("ProgressBar5.png",'progressbar');
             removeAllChildNodes(middleThird);
-            // TODO step 5
+            let address = addDiv('address');
+            address.append(
+                inputFill('Your Adress Lane',null,'text')
+            );
+            address.append(
+                inputFill('Your Adress Lane 2',null,'text')
+            );
+            address.append(
+                inputFill('State',null,'text')
+            );
+            address.append(
+                inputFill('City',null,'text')
+            );
+            address.append(
+                inputFill('Zip',null,'text')
+            );
             removeAllChildNodes(lowerThird);
             nextBackButtons()
             break;
@@ -252,9 +315,21 @@ let NextSlide = (slideId) => {
         case 6: 
             UpdateProgressBar("ProgressBar6.png",'progressbar');
             removeAllChildNodes(middleThird);
+            // TODO step 5
+
+            addChckBxs('Medicaid Application Assistance', 'SNAP', 'FOOD', 'Other');
+
+            removeAllChildNodes(lowerThird);
+            nextBackButtons()
+            break;
+
+        case 7: 
+            UpdateProgressBar("ProgressBar7.png",'progressbar');
+            removeAllChildNodes(middleThird);
             inputFill('How did you hear about us?',null,'text');
             inputFill('Please ask as many questions as you need!',null,'text');
             removeAllChildNodes(lowerThird);
+            addButton('Back','smallBar',`NextSlide(${slideId-1})`);
             addButton('Send Form','smallBar',`SendForm()`);
         break;
 
