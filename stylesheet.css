@@ -38,6 +38,11 @@ largeBar{
 
 
 /* bread crumbs */
+
+.progressbar {
+  height:100px;
+}
+
 /* Style the list */
   .breadcrumb {
     display: flex;
