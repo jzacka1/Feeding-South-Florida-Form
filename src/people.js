@@ -1,30 +1,39 @@
-let people = document.getElementById('people');
 
-let addPerson = (age,id, css) => {
+let NumOfPeople = 0;
+
+let addPersonDiv = (age,id, css) => {
+    let people = document.getElementById('people');
     /* Create an button element */
-    let person = document.createElement("div");
+    let person = document.createElement("img");
 
     /* Set the type class */
     person.setAttribute("class", css);
 
-    let stock = document.createElement("img");
-    stock.src="assests/images/grain.png";
+    
         /* Set height of the person */
         switch(true) {
             case age < 10:
-                stock.style.height = "50px";
+                //person.style.height = "50px";
+                person.setAttribute("src", "assests/images/Grain-Child.png");
                 break;
-            case age < 20:
-                stock.style.height = "70px";
+            case age < 65:
+                //person.style.height = "70px";
+                person.setAttribute("src", "assests/images/Grain-Adult.png");
                 break;
             default: 
-                stock.style.height = "70px";
+                //person.style.height = "100px";
+                person.setAttribute("src", "assests/images/Grain-Senior.png");
                 break;
         }
-    person.appendChild(stock);
     person.setAttribute('id', id)
     /* Append node to the body */
     people.appendChild(person);
 }
 //test for the adding a person
 
+let addPerson = () => {
+    let PersonAge = document.getElementById("PersonAge");
+    NumOfPeople++;
+    addPersonDiv(PersonAge.value,NumOfPeople,"person");
+
+}

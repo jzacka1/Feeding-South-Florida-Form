@@ -11,7 +11,7 @@ body{
 
 smallBar{
       width:20px;
-      border:8px solid red;
+      border:8px solid pink;
 
 }
 medBar{
@@ -22,6 +22,20 @@ largeBar{
       width:80px;
       border:8px solid pink;
 }
+
+
+
+/* people */
+.person {
+  display: inline-block;
+
+}
+#people {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
 
 /* bread crumbs */
 /* Style the list */
