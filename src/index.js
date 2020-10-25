@@ -153,31 +153,32 @@ let addPersonDiv = (ages, id, css) => {
     let people = document.getElementById('people');
     /* Create an button element */
     let person = document.createElement("img");
-
     /* Set the type class */
     person.setAttribute("class", css);
 
     /* Set height of the person */
-    switch (personAge) {
-        case personAge < 10:
+    switch (true) {
+        case ages < 10:
             // person.style.height = "50px";
             person.setAttribute("src", "assests/images/Grain-Child.png");
             person.setAttribute('id', id)
             people.appendChild(person);
             break;
-        case 10 < personAge && personAge < 65:
+        case 10 < ages && ages < 65:
             // person.style.height = "70px";
             person.setAttribute("src", "assests/images/Grain-Adult.png");
             person.setAttribute('id', id)
             people.appendChild(person);
             break;
-        case personAgew < 65:
+        case ages >= 65:
             // person.style.height = "100px";
             person.setAttribute("src", "assests/images/Grain-Senior.png");
             person.setAttribute('id', id);
             people.appendChild(person);
             break;
     }
+
+    
 
 }
 //test for the adding a person
@@ -192,12 +193,14 @@ let ShowPeople = (PeopleArr) => {
 
 
 let addPerson = () => {
-    let personAge = document.getElementById("PersonAge").value;
+    let personAge = document.getElementById("personAge").value;
+    console.log("adding person age",personAge)
     NumOfPeople++;
     let newPerson = { PersonID: NumOfPeople, age: personAge };
     PeopleArr.push(newPerson);
     AddToForm("People", PeopleArr);
     addPersonDiv(personAge, NumOfPeople, "person");
+    console.log("",  personAge)
 
 
 }
