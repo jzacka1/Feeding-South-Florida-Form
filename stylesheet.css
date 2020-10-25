@@ -66,8 +66,9 @@ input{
 .clickInput{
       color: #436026;
       height: 100px;
-      width: 100px;
+      width: 200px;
       margin: 30px;
+      border-bottom-color:  #f28c3c;
 
 }
 .smallBar{
