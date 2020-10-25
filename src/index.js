@@ -242,7 +242,7 @@ function limecheck(pram) {
     serviceFood.style.borderColor = '#f28c3c';
     serviceOther.style.borderColor = '#f28c3c';
     serviceSnap.style.borderColor = '#f28c3c';
-    serviceMed.style.borborderColorder = '#f28c3c';
+    serviceMed.style.borderColor = '#f28c3c';
 
     pram.style.borderColor == 'lime'
         ? pram.style.borderColor = '#f28c3c'
@@ -276,10 +276,12 @@ let NextSlide = (slideId) => {
             language.appendChild(language2);
 
             addRadioBtns('English', 'Spanish');
-            language1.appendChild(document.querySelector("#\\32 "))
-            language1.appendChild(YourEnglishRadio)
-            language2.appendChild(document.querySelector("#\\33 "))
-            language2.appendChild(YourSpanishRadio)
+            language1.appendChild(document.querySelector("#\\32 "));
+            language1.appendChild(YourEnglishRadio);
+            language2.appendChild(document.querySelector("#\\33 "));
+            language2.appendChild(YourSpanishRadio);
+            addText('<h3>Please fill this form:</h3>');
+
             inputFill('First Name', null, 'text');
             inputFill('Last Name', null, 'text');
             removeAllChildNodes(lowerThird);
@@ -356,7 +358,6 @@ let NextSlide = (slideId) => {
             inputFill('Snap', 'clickInput', 'text', 'serviceSnap')
             inputFill('Medicad', 'clickInput', 'text', 'serviceMed')
             inputFill('other', 'clickInput', 'text', 'serviceOther')
-            inputFill('food', 'clickInput', 'checkbox', 'serviceFoodCheck')
 
             serviceFood.setAttribute('readOnly', 'enable')
             serviceSnap.setAttribute('readOnly', 'enable')
