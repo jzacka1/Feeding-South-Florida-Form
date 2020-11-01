@@ -141,6 +141,18 @@ let UpdateProgressBar = (imgsrc, css) => {
     let progressbar = document.createElement("img");
     progressbar.setAttribute("src", "assests/images/" + imgsrc);
     progressbar.setAttribute("class", css);
+
+    //Added aria label and role
+    progressbar.setAttribute("role", "progressbar");
+
+    //Calculate percentage mark
+    let max = 7;
+    let now = ((parseInt(imgsrc.match(/\d+/))/max)*100);
+
+    progressbar.setAttribute("aria-valuemin", "0");
+    progressbar.setAttribute("aria-valuemax", "100");
+    progressbar.setAttribute("aria-valuenow", now);
+
     breadcrumbs.appendChild(progressbar);
 }
 
@@ -255,9 +267,9 @@ let NextSlide = (slideId) => {
             language.appendChild(language2);
 
             addRadioBtns('English', 'Spanish');
-            language1.appendChild(document.querySelector("#\\32 "));
+            language1.appendChild(document.querySelector("#\\3" + (buttonid - 1)));
             language1.appendChild(YourEnglishRadio);
-            language2.appendChild(document.querySelector("#\\33 "));
+            language2.appendChild(document.querySelector("#\\3" + buttonid));
             language2.appendChild(YourSpanishRadio);
             addText('<h3>Please fill this form:</h3>');
 
